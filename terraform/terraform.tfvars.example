@@ -1,0 +1,7 @@
+# Copy to terraform.tfvars (git-ignored) and fill in. Never commit real values.
+account_id        = "YOUR_CLOUDFLARE_ACCOUNT_ID"
+worker_name       = "library-book-manager"
+kv_namespace_name = "library_books"
+environment       = "dev"
+app_name          = "Library Book Management System"
+workers_subdomain = "your-subdomain"   # e.g. "johndoe" -> johndoe.workers.dev

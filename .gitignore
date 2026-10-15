@@ -1,0 +1,17 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+*.tfplan
+tfplan
+# Secrets / variable files (keep the .example and environment files)
+*.tfvars
+!*.tfvars.example
+!terraform/environments/*.tfvars
+.env
+.env.*
+# Editors / OS
+.vscode/
+.DS_Store
+node_modules/

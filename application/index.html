@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Library Book Manager</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="top">
+    <div>
+      <h1>📚 Library Book Manager</h1>
+      <p id="subtitle">Serverless library catalogue on Cloudflare Workers + KV</p>
+    </div>
+    <span id="envBadge" class="badge">…</span>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Add a Book</h2>
+      <form id="bookForm" class="grid">
+        <label>Title
+          <input id="title" required maxlength="150" placeholder="e.g. Introduction to Algorithms" />
+        </label>
+        <label>Author
+          <input id="author" required maxlength="100" placeholder="e.g. Thomas H. Cormen" />
+        </label>
+        <label>Category
+          <select id="category">
+            <option>Computer Science</option>
+            <option>Engineering</option>
+            <option>Mathematics</option>
+            <option>Science</option>
+            <option>Literature</option>
+            <option>General</option>
+          </select>
+        </label>
+        <label>Status
+          <select id="status">
+            <option>Available</option>
+            <option>Issued</option>
+            <option>Reserved</option>
+          </select>
+        </label>
+        <button type="submit" class="primary">Add Book</button>
+      </form>
+    </section>
+
+    <section class="stats" id="stats"></section>
+
+    <section class="card">
+      <div class="toolbar">
+        <h2>Catalogue</h2>
+        <input id="search" type="search" placeholder="Search title or author…" />
+        <select id="filter">
+          <option value="">All statuses</option>
+          <option>Available</option>
+          <option>Issued</option>
+          <option>Reserved</option>
+        </select>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>ID</th><th>Title</th><th>Author</th><th>Category</th><th>Status</th><th>Added</th><th></th></tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+      <p id="empty" class="muted" hidden>No books found.</p>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="/script.js"></script>
+</body>
+</html>
