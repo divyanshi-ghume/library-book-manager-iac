@@ -24,6 +24,12 @@ env:
   TF_CLOUD_ORGANIZATION: ${{ secrets.TF_CLOUD_ORGANIZATION }}
   TF_WORKSPACE: ${{ secrets.TF_WORKSPACE }}
   TF_IN_AUTOMATION: "true"
+  # Project values (non-secret, same as terraform.tfvars)
+  TF_VAR_worker_name: "library-book-manager"
+  TF_VAR_kv_namespace_name: "library_books"
+  TF_VAR_environment: "test"
+  TF_VAR_app_name: "Library Book Management System"
+  TF_VAR_workers_subdomain: "ghumedivyanshi"
 
 jobs:
   terraform:
